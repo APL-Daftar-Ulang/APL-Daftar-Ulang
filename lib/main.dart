@@ -1,3 +1,4 @@
+import 'package:apl_daftar_ulang/homePage.dart';
 import 'package:apl_daftar_ulang/welcomePage.dart';
 import 'package:flutter/material.dart';
 
@@ -12,8 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: welcomePage(),
-      
+      home: HomePage(),
     );
   }
 }
