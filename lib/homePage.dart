@@ -1,3 +1,5 @@
+import 'package:apl_daftar_ulang/notifPage.dart';
+import 'package:apl_daftar_ulang/profilePage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -25,63 +27,75 @@ class _HomePageState extends State<HomePage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        padding: EdgeInsets.only(left: 20, right: 15),
-                        width: 200,
-                        height: 50,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 1,
-                                blurRadius: 5,
-                                offset:
-                                    Offset(1, 1), // changes position of shadow
+                      GestureDetector(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => NotifPage())),
+                        child: Container(
+                          padding: EdgeInsets.only(left: 20, right: 15),
+                          width: 200,
+                          height: 50,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 1,
+                                  blurRadius: 5,
+                                  offset: Offset(
+                                      1, 1), // changes position of shadow
+                                ),
+                              ],
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20))),
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.notifications_active_outlined,
+                                color: Color(0xff3F78E0),
                               ),
-                            ],
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20))),
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.notifications_active_outlined,
-                              color: Color(0xff3F78E0),
-                            ),
-                            SizedBox(
-                              width: 15,
-                            ),
-                            Text(
-                              'Notifikasi',
-                              style: GoogleFonts.openSans(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                  color: Color(0xff3F78E0)),
-                              textAlign: TextAlign.center,
-                            ),
-                            SizedBox(
-                              width: 15,
-                            ),
-                            Container(
-                              padding: EdgeInsets.only(top: 2),
-                              width: 25,
-                              height: 25,
-                              decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Color(0xff3F78E0)),
-                              child: Text(
-                                '2',
+                              SizedBox(
+                                width: 15,
+                              ),
+                              Text(
+                                'Notifikasi',
                                 style: GoogleFonts.openSans(
-                                    fontSize: 14,
+                                    fontSize: 16,
                                     fontWeight: FontWeight.w600,
-                                    color: Colors.white),
+                                    color: Color(0xff3F78E0)),
                                 textAlign: TextAlign.center,
                               ),
-                            )
-                          ],
+                              SizedBox(
+                                width: 15,
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(top: 2),
+                                width: 25,
+                                height: 25,
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Color(0xff3F78E0)),
+                                child: Text(
+                                  '2',
+                                  style: GoogleFonts.openSans(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white),
+                                  textAlign: TextAlign.center,
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ),
-                      Container(width: 60, height: 60, child: CircleAvatar())
+                      GestureDetector(
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ProfilePage())),
+                          child: Container(
+                              width: 60, height: 60, child: CircleAvatar()))
                     ],
                   ),
                   SizedBox(
@@ -592,14 +606,16 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          Container(margin: EdgeInsets.only(top: 750, left: 320),
+          Container(
+            margin: EdgeInsets.only(top: 750, left: 320),
             width: 60,
             height: 60,
-            decoration: BoxDecoration(
-              color: Color(0xff1C438C),
-              shape: BoxShape.circle
+            decoration:
+                BoxDecoration(color: Color(0xff1C438C), shape: BoxShape.circle),
+            child: Icon(
+              Icons.phone_in_talk_rounded,
+              color: Colors.white,
             ),
-            child: Icon(Icons.phone_in_talk_rounded, color: Colors.white,),
           )
         ],
       ),
